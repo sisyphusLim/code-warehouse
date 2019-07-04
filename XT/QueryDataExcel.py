@@ -1,5 +1,6 @@
 #coding=utf-8
 # 版本：1.01
+#从网站爬取船舶数据，并保存到excel（需配合额外的ships.txt文件）
 
 import time, io, sys, re, os
 import requests
