@@ -1,20 +1,13 @@
 #coding=utf-8
+#检索禅道数据库，找到项目ID所对应的所有需求名称，并以指定格式输出到.md文件中并保存
 import pymysql
 import os
-
-#在当前目录创建一个.md文件用于保存数据并打开
-
-
-    
 
 #连接数据库
 db = pymysql.connect("192.168.5.102", "root", "Hzx@120415", "zentao")
 #print(db)
 #使用cursor()方法创建一个游标对象
 cursor = db.cursor()
-
-
-
 
 #获取一个项目对应的所有需求名称和链接
 def get_storyname(project_id):
@@ -60,8 +53,6 @@ def write_into_md(psmd, project_name):
         f.write(psmd)
         f.close
         
-
-
 if __name__ == "__main__":
     project_id = input("请输入项目id(数字)：")
     if project_id.isdigit():
@@ -71,6 +62,4 @@ if __name__ == "__main__":
             print("可能不存在编号为{}的项目，请检查后重试".format(project_id))
     else:
         print("输入错误")
-        
-    #构建数据库查询语句，查询zt_story下story_id对应的需求名称(title)
-    #sql_story = 'select * from zt_story where id = ' + story_id
+
