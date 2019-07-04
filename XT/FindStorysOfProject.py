@@ -5,8 +5,6 @@ import os
 #在当前目录创建一个.md文件用于保存数据并打开
 
 
-    
-
 #连接数据库
 db = pymysql.connect("192.168.5.102", "root", "Hzx@120415", "zentao")
 #print(db)
