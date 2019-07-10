@@ -20,8 +20,9 @@ def get_storyname(project_id):
     project_list = cursor.fetchall()
     #print(project_list)
     #将项目标题、地址等写到psmd_list里
-    psmd_list = '[TOC]' + '\n' + '## [{}项目完成情况](http://192.168.5.102/zentao/project-task-{}.html)'.format(project_list[0][0], project_id)
-    psmd_list = psmd_list + '\n' + '----'
+    psmd_list = '[[<font size=6px>{}项目完成情况</font>(target=_blank)](http://192.168.5.102/zentao/project-task-{}.html)]'.format(project_list[0][0], project_id) + '\n' + '[点击查看bug列表](http://192.168.5.102/zentao/project-bug-{}.html)'.format(project_id) + '\n'
+    #psmd_list = '[TOC]' + '\n' + '## [{}项目完成情况](http://192.168.5.102/zentao/project-task-{}.html)'.format(project_list[0][0], project_id)
+    psmd_list = psmd_list + '\n' + '----' + '\n' + "**本期需求以及完成情况如下：**" + '\n' + '[TOC]' + '\n'+ '\n'
 
     #构建数据库查询语句，查询zt_projectstory下project_id对应的所有story_id
     sql_projectStory = 'select story from zt_projectstory where project = {}'.format(project_id)    #使用execute()方法执行SQL查询
