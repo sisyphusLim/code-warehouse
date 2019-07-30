@@ -2,21 +2,10 @@
 # 修改2ui的插件默认配置,自用
 import os, winreg
 
-
-
-#从注册表获取路径
-'''
-\HKEY_LOCAL_MACHINE
-\SOFTWARE\WOW6432Node\Blizzard Entertainment\World of Warcraft
-win
-winreg.QueryValueEx(key,value_name)
-'''
-
-
-
 # 找到内容并修改,之后重新写入文件
 def alter_lua(file_name, old_str, new_str):
-    path = r"D:\World of Warcraft\_retail_\Interface\AddOns\_ShiGuang\Core"
+    #path = game_path
+    #path = r"D:\World of Warcraft\_retail_\Interface\AddOns\_ShiGuang\Core"
     #根据文件名,组合成路径
     file_name = os.path.join(path, file_name)
     file_data = ""
@@ -34,7 +23,28 @@ def alter_lua(file_name, old_str, new_str):
     with open(file_name, "w", encoding="utf-8") as f:
         f.write(file_data)
 
+# 从注册表获取游戏目录
+def game_path(reg_string):
+    if "HKEY_" in reg_string:
+        # 裁出根键和路径来
+        #root_key = reg_string.split("\\\",1)[0]
+        sub_key = reg_string.split("\\",1)[1]
+    else:
+        sub_key = reg_string
+    
+    # 定位子键位置
+    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, sub_key)
+    #通过子键位置，以及项的名称，获得对应的值，在这里就是游戏路径
+    value, _type = winreg.QueryValueEx(key, "InstallPath")
+    return(value)
 
+
+# 注册表位置，不要以\开头(split时会出问题)，同时组成插件目录的路径
+reg_string = r"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Blizzard Entertainment\World of Warcraft"
+path = os.path.join(game_path(reg_string), "Interface\AddOns\_ShiGuang\Core")
+#print(path)
+
+# 插件默认的设置
 old_strs = ['Style = 6', 
 'CrazyCatLady = true', 
 'Wallpaperkit = true', 
@@ -42,6 +52,7 @@ old_strs = ['Style = 6',
 'kAutoOpen = true', 
 'xMerchant = true']
 
+# 希望修改的设置
 new_strs = ['Style = 4', 
 'CrazyCatLady = false', 
 'Wallpaperkit = false', 
@@ -58,4 +69,3 @@ for i in range(len(old_strs)):
 
 alter_lua("Tutorial.lua", "ChatFrame1:SetWidth(360)", "ChatFrame1:SetWidth(420)")
 alter_lua("Tutorial.lua", "ChatFrame1:SetHeight(121)", "ChatFrame1:SetHeight(200)")
-
