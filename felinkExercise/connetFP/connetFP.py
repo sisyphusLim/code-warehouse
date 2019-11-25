@@ -8,6 +8,7 @@ def connetFP():
     try:
         print("开始连接手机,打开全局透明壁纸")
         caps = {}
+        caps['automationName'] = 'uiautomator2'
         caps["appPackage"] = "com.felink.foregroundpaper"
         caps["appActivity"] = ".SplashActivity"
         caps["platformName"] = "Android"
