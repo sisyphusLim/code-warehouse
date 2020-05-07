@@ -50,7 +50,13 @@ old_strs = ['Style = 6',
 'Wallpaperkit = true', 
 'AutoReagentBank = true', 
 'kAutoOpen = true', 
-'xMerchant = true']
+'xMerchant = true',
+'Lock = true',
+'ChatWidth = 360',
+'ChatHeight = 121',
+'LockUIScale = true',
+#'UIScale = 0.8'
+]
 
 # 希望修改的设置
 new_strs = ['Style = 4', 
@@ -58,7 +64,13 @@ new_strs = ['Style = 4',
 'Wallpaperkit = false', 
 'AutoReagentBank = false', 
 'kAutoOpen = false', 
-'xMerchant = false']
+'xMerchant = false',
+'Lock = false',
+'ChatWidth = 420',
+'ChatHeight = 200',
+'LockUIScale = false',
+#'UIScale = 1'
+]
 
 
 for i in range(len(old_strs)):
@@ -67,5 +79,17 @@ for i in range(len(old_strs)):
     file_name = "GUI.lua"
     alter_lua(file_name, old_str, new_str)
 
-alter_lua("Tutorial.lua", "ChatFrame1:SetWidth(360)", "ChatFrame1:SetWidth(420)")
-alter_lua("Tutorial.lua", "ChatFrame1:SetHeight(121)", "ChatFrame1:SetHeight(200)")
+
+
+alter_lua("Tutorial.lua", "MaoRUIDB["LockUIScale"] = true", "MaoRUIDB["LockUIScale"] = false")
+#alter_lua("Tutorial.lua", "ChatFrame1:SetWidth(360)", "ChatFrame1:SetWidth(420)")
+#alter_lua("Tutorial.lua", "ChatFrame1:SetHeight(121)", "ChatFrame1:SetHeight(200)")
+
+
+# D:\World of Warcraft\_retail_\Interface\AddOns\_ShiGuang\Plugins\Aces\CurrencyTracking\Core.lua 下
+# currencies = {
+#				[1580] = true,
+#				[1719] = true,
+##				[1755] = true,
+#                }
+#                中添加 [824] = true,
