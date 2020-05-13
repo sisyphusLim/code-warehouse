@@ -3,6 +3,7 @@
 #from appium import webdriver
 from connetFP.connetFP import connetFP
 from login.login import login_user
+#from swipe.swipe import Swipe
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import MobileBy
@@ -12,10 +13,10 @@ driver = connetFP()
 # 通过权限
 
 
-size = driver.get_window_size()
-width = size['width']
-height = size['height']
-print("获取当前屏幕大小成功:宽 {}, 高 {}".format(width, height))
+#size = driver.get_window_size()
+#width = size['width']
+#height = size['height']
+#print("获取当前屏幕大小成功:宽 {}, 高 {}".format(width, height))
 
 
 
