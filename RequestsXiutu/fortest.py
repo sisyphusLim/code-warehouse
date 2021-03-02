@@ -30,13 +30,18 @@ headers = {
 data = '{"TagIds":"","ResTypes":"80029","SortOrder":1,"PageIndex":1,"PageSize":20,"GetWebp":1,"ClientSDKVer":6}'
 
 r = requests.post("http://pandahome.ifjing.com/action.ashx/ThemeAction/4032", headers=headers, data=data,)
-
+#返回200代表连接成功
 print(r.status_code)
 #防止返回结果中的中文显示乱码，指定编码格式为utf-8
 r.encoding = "UTF-8"  
 #print(r.json())
 print(r.json().get("RecordCount"))
-list = r.json().get("ThemeList")
+dict = r.json().get("ThemeList")
 #获取列表中的第一个模板编号
-print(list[0]['ThemeId'])
+themeList = []
+for i in range(10):
+    themeId = dict[i]['ThemeId']
+    themeList.append(themeId)
+
+print(themeList)
 
