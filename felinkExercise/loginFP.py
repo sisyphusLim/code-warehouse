@@ -1,7 +1,7 @@
 # coding: utf-8
 
 #from appium import webdriver
-from connetFP.connetFP import connetFP
+from connetFP.connetFP import connet_FP
 from login.login import login_user
 #from swipe.swipe import Swipe
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import MobileBy
 import time
 
-driver = connetFP()
+driver = connet_FP()
 # 通过权限
 
 
