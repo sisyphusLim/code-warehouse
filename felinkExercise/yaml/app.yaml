@@ -1,0 +1,8 @@
+xiutu:
+  appPackage : "com.felink.videopaper.mi"
+  appActivity: "com.felink.videopaper.activity.WelcomActivity"
+
+quanju:
+  appPackage : "com.felink.foregroundpaper"
+  appActivity: ".SplashActivity"
+

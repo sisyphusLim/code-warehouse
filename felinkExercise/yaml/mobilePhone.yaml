@@ -1,0 +1,10 @@
+meizu:
+  platformName : "Android"
+  deviceName : "meizu"
+  platformVersion : "8.1.0"
+
+oppo:
+  platformName : "Android"
+  deviceName : "oppo"
+  platformVersion : "10.0"
+  
