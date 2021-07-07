@@ -29,6 +29,7 @@ if mine_tab.is_selected() == False:
     print("点击'我的'标签")
     mine_tab.click()
 
+driver.find_element()
 #time.sleep(2)
 
 ## 确认未登录状态
