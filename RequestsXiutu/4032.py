@@ -1,7 +1,7 @@
 #coding=utf-8
 import requests
 import json, os, time, yaml
-from filePath import filePath
+import filepath
 
 headers = {
 'EnableStatus': '4',
@@ -34,16 +34,29 @@ r = requests.post("http://pandahome.ifjing.com/action.ashx/ThemeAction/4032", he
 r.encoding = "UTF-8"
 #print(r.text)  
 #print(r.json())
-record_count = r.json().get("RecordCount")
-dict = r.json().get("ThemeList")
-print(dict)
+#record_count = r.json().get("RecordCount")
+theme_requests = r.json().get("ThemeList")
+print(dic)
+
+text = filepath.yaml_read("动态模板")
+print(text["RecordCount"])
+
+#确认是否新增
+record_count = r.json().get("RecordCount") - text["RecordCount"]
+#增加容错
+record_count += 3
+
+for i in range(record_count):
+    theme_id = theme_requests[i]["ThemeId"]
+    
 
 # 指定yaml文件路径
 
-yaml_path = filepath("test")
+yaml_path = filepath.filepath("test")
 
 
-#调用filePath，写入内容
+
+#调用filepath.yaml_write，写入内容
 with open(yaml_path, "w+", encoding="utf-8") as f:
     yaml.dump("aaaaa", f,default_flow_style=False,encoding="utf-8",allow_unicode=True)
 
