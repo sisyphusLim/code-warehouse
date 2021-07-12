@@ -36,28 +36,42 @@ r.encoding = "UTF-8"
 #print(r.json())
 #record_count = r.json().get("RecordCount")
 theme_requests = r.json().get("ThemeList")
-print(dic)
-
 text = filepath.yaml_read("动态模板")
-print(text["RecordCount"])
+print(text["theme_list"])
+#print(text["RecordCount"])
 
 #确认是否新增
-record_count = r.json().get("RecordCount") - text["RecordCount"]
-#增加容错
-record_count += 3
+print(r.json().get("RecordCount"))
 
-for i in range(record_count):
-    theme_id = theme_requests[i]["ThemeId"]
-    
+def get_new_theme_list():
+    record_count = r.json().get("RecordCount") - text["RecordCount"]
+    #增加容错
+    record_count += 3
+
+    theme_list = []
+    for i in range(record_count):
+        theme_id = theme_requests[i]["ThemeId"]
+        if theme_id not in text["theme_list"]:
+            theme_list.insert(0,theme_id)
+    return(theme_list)
+
+theme_list = get_new_theme_list()
+print(theme_list)
+#更新数据，为使得新增的模板编号显示在上方，故而先将text中的模板数据
+#写入到获得的列表之后
+theme_list = theme_list + text["theme_list"]
+text["RecordCount"] = r.json().get("RecordCount")
+text["theme_list"] = theme_list
+print(text)
 
 # 指定yaml文件路径
 
-yaml_path = filepath.filepath("test")
+yaml_path = filepath.filepath("动态模板")
 
 
 
 #调用filepath.yaml_write，写入内容
 with open(yaml_path, "w+", encoding="utf-8") as f:
-    yaml.dump("aaaaa", f,default_flow_style=False,encoding="utf-8",allow_unicode=True)
+    yaml.dump(text, f,default_flow_style=False,encoding="utf-8",allow_unicode=True)
 
 f.close()
