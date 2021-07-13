@@ -51,12 +51,13 @@ def get_new_theme_list():
     theme_list = []
     for i in range(record_count):
         theme_id = theme_requests[i]["ThemeId"]
+        #print(theme_id)
         if theme_id not in text["theme_list"]:
             theme_list.insert(0,theme_id)
     return(theme_list)
 
 theme_list = get_new_theme_list()
-print(theme_list)
+print("新的模板列表为:{}".format(theme_list))
 #更新数据，为使得新增的模板编号显示在上方，故而先将text中的模板数据
 #写入到获得的列表之后
 theme_list = theme_list + text["theme_list"]
