@@ -36,7 +36,14 @@ def make_theme(theme_id,driver=driver):
     
     search_theme(theme_id)
     driver.find_element_by_id("tv_make").click()
+    
     #这里如果未登录，需要插入一个登录会员账号的流程。
+    '''
+    if driver.find_element_by_id("submit_login") is not None:
+        print(driver.find_elements_by_id("submit_login"))
+        login_user(driver, 13599096447, "123456a")
+    '''
+
     driver.find_element_by_id("img_select_material").click()
 
     #假使需要指定图片目录
@@ -44,7 +51,7 @@ def make_theme(theme_id,driver=driver):
     #driver.find_element_by_android_uiautomator('resourceId("name").text("我的壁纸")').click()
 
     #下面查找时使用了find_elements_by_xxxx，会报错'list' object has no attribute 'click' 因为找到的元素是一个列表
-    driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.felink.videopaper.mi:id/mRoot").index(14)').click()
+    driver.find_element_by_android_uiautomator('new UiSelector().resourceId("mRoot").index(14)').click()
     
     driver.find_element_by_id("tv_rightBtn").click()
     driver.find_element_by_id("crop_finish_btn").click()
