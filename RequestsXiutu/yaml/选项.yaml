@@ -1,0 +1,17 @@
+权限要求确认:com.felink.videopaper.mi:id/btn_confirm
+系统权限取消:com.android.permissioncontroller:id/permission_deny_button
+系统权限确定:com.android.permissioncontroller:id/permission_allow_button
+通知权限要求:
+  确认:com.felink.videopaper.mi:id/btn_open
+  取消:com.felink.videopaper.mi:id/btn_cancel
+
+强制升级弹窗:com.felink.videopaper.mi:id/btn_upgrade
+强制升级关闭:com.felink.videopaper.mi:id/iv_upgrade_close
+
+公告关闭:iv_float_notice_close
+
+首页:main_tab_diy_text
+壁纸:main_tab_wallpaper_text
+定制:main_tab_customize_text
+有料:main_tab_video_text
+我的:main_tab_mine_text

@@ -1,0 +1,42 @@
+quanju_headers:
+  EnableStatus: '0'
+  MT: '4'
+  PID: '20000099'
+  IMEI: 1432a67ff6b5288e
+  DivideVersion: '8.2.8.8'
+  ProtocolVersion: '3.0'
+  Pkg: com.felink.foregroundpaper
+  SupPhone: PACM00
+  CUID: 2897BA228869141F226A3BAB2F013372%7C0
+  IMSI: '91'
+  Sign: 6976635c7ff0ef8067c22773e7a3d381
+  SupFirm: '10'
+  SessionId: 9074fb066881fe79aa1084d65696c0fb
+  Content-Type: text/plain; charset=UTF-8
+  Content-Length: '78'
+  Host: pandahome.ifjing.com
+  Accept-Encoding: gzip
+  User-Agent: okhttp/3.4.1
+  Connection: keep-alive
+
+xiutu_headers:
+  EnableStatus: '0'
+  MT: '4'
+  PID: '20000073'
+  IMEI: 8f4d9cc944d53171
+  DivideVersion: '3.3.6.9'
+  ProtocolVersion: '3.0'
+  Pkg: com.felink.videopaper.mi
+  SupPhone: 'Redmi K30'
+  CUID: 06F106401A01B6C335F49A1173B28453%7C0
+  IMSI: '91'
+  Sign: bdc1c467d5d4440721bede7bf18e71e8
+  SupFirm: '10'
+  SessionId: dc1da7eeb3e0e9b4d5f3b203fc22f906
+  Content-Type: text/plain; charset=UTF-8
+  Content-Length: '81'
+  Host: pandahome.ifjing.com
+  Accept-Encoding: gzip
+  User-Agent: okhttp/3.4.1
+  Connection: keep-alive
+  BranchName: xiutu

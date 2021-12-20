@@ -5,21 +5,11 @@ iv:
     设为全局透明:video_detail_authorize_global_image_view
     设为充电动画:video_detail_authorize_charging_anim_image_view
     预览:video_detail_authorize_preview_image_view
-    预览-充电动画-设为充电动画:charging_anim_preview_set_charging_anim
-    预览-充电动画-设为桌面:charging_anim_preview_set_home
-    预览-充电动画-设为锁屏:charging_anim_preview_set_lock
-    预览-主页-设为充电动画:home_preview_set_charging_anim
-    预览-主页-设为桌面:home_preview_set_home
-    预览-主页-设为锁屏:home_preview_set_lock
-    预览-锁屏-设为充电动画:lock_preview_set_charging_anim
-    预览-锁屏-设为桌面:lock_preview_set_home
-    预览-锁屏-设为锁屏:lock_preview_set_lock
+
 前景:
-    预览-设为前景:detail_set_foreground
     设为前景:video_detail_authorize_foreground_image_view
     预览:video_detail_authorize_preview_image_view
 QQ微信壁纸:
-    预览-设为微信透明:detail_set_qq_wechat
     设为微信透明:entrance_set_transparent
     预览:entrance_preview
 静态壁纸:
@@ -28,4 +18,22 @@ QQ微信壁纸:
     设为微信透明:entrance_set_transparent
     设为充电动画:entrance_set_charging_anim
 
-定制同款:video_detail_diy_image_view
+预览:
+    充电动画界面:
+        设为充电动画:charging_anim_preview_set_charging_anim
+        设为桌面:charging_anim_preview_set_home
+        设为锁屏:charging_anim_preview_set_lock
+    首页界面:
+        设为充电动画:home_preview_set_charging_anim
+        设为桌面:home_preview_set_home
+        设为锁屏:home_preview_set_lock
+    锁屏界面:
+        设为充电动画:lock_preview_set_charging_anim
+        设为桌面:lock_preview_set_home
+        设为锁屏:lock_preview_set_lock
+    其他:
+        设为微信透明:detail_set_qq_wechat
+        设为前景:detail_set_foreground
+
+定制同款:
+    video_detail_diy_image_view

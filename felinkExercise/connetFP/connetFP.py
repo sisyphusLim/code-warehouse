@@ -47,3 +47,4 @@ def connet_XT():
     except:
         print("连接失败,请检查")
 
+#connet_XT()

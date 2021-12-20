@@ -28,8 +28,7 @@ def yaml_write(yaml_text, path):
     with open(yaml_path,"w+",encoding="utf-8") as f:
         yaml.dump(yaml_text,f,default_flow_style=False,encoding="utf-8",allow_unicode=True)
         f.close()      
-'''
-c = yaml_read("test")
-print(c)
-yaml_write({1:2,3:5},"text")
-'''
+
+#c = yaml_read("headers")
+#print(c)
+#yaml_write({1:2,3:5},"text")

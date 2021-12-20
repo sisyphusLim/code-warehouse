@@ -32,7 +32,7 @@ r = requests.post("http://pandahome.ifjing.com/action.ashx/ThemeAction/4032", he
 #print(r.status_code)
 #防止返回结果中的中文显示乱码，指定编码格式为utf-8
 r.encoding = "UTF-8"
-#print(r.text)  
+print(r.text)  
 #print(r.json())
 #record_count = r.json().get("RecordCount")
 theme_requests = r.json().get("ThemeList")
@@ -46,7 +46,7 @@ print(r.json().get("RecordCount"))
 def get_new_theme_list():
     record_count = r.json().get("RecordCount") - text["RecordCount"]
     #增加容错
-    record_count += 3
+    #record_count += 3
 
     theme_list = []
     for i in range(record_count):
@@ -57,6 +57,7 @@ def get_new_theme_list():
     return(theme_list)
 
 theme_list = get_new_theme_list()
+
 print("新的模板列表为:{}".format(theme_list))
 #更新数据，为使得新增的模板编号显示在上方，故而先将text中的模板数据
 #写入到获得的列表之后
@@ -64,6 +65,8 @@ theme_list = theme_list + text["theme_list"]
 text["RecordCount"] = r.json().get("RecordCount")
 text["theme_list"] = theme_list
 print(text)
+print(headers)
+
 
 # 指定yaml文件路径
 
